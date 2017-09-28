@@ -1,2 +1,6 @@
 RemoteSystemsTempFiles
-*.class
+.metadata
+*/.settings
+*/bin
+*/.classpath
+*/.project
