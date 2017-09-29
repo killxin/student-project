@@ -22,7 +22,7 @@ public class Utils {
 		return (CompilationUnit) parser.createAST(null/* IProgressMonitor*/);
 	}
 	
-	private static String readFromFile(String path) {
+	public static String readFromFile(String path) {
 		StringBuilder r = new StringBuilder();
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(path));

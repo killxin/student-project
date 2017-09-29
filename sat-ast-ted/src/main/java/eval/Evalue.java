@@ -98,7 +98,7 @@ public class Evalue {
 	}
 
 	static double degreeByLN(int ln, String srcpath, String tarpath) {
-		int srcln = 0, tarln = 0;
+		int srcln = 0;
 		try {
 			BufferedReader br;
 			String line;
@@ -106,13 +106,6 @@ public class Evalue {
 			line = br.readLine();
 			while (line != null) {
 				srcln++;
-				line = br.readLine();
-			}
-			br.close();
-			br = new BufferedReader(new FileReader(tarpath));
-			line = br.readLine();
-			while (line != null) {
-				tarln++;
 				line = br.readLine();
 			}
 			br.close();

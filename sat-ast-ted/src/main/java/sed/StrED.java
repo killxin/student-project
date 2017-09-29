@@ -1,23 +1,22 @@
 package sed;
 
-import zhsh.Tree;
+import zhsh.Zhsh;
 import ast.Utils;
 
 public class StrED {
 	
 	public static double degreeBySED(String srcpath,String tarpath){
-		Tree a = new Tree(Utils.createAST(srcpath));
-		Tree b = new Tree(Utils.createAST(tarpath));
-		Integer[] sa = a.preorder();
-		Integer[] sb = b.preorder();
-		int sed = sed(sa,sb);
-		return (double)sed/(double)sa.length;
+		String src = Utils.readFromFile(srcpath).replaceAll("\\s+", " ");
+		String tar = Utils.readFromFile(tarpath).replaceAll("\\s+", " ");
+		int sed = sed(src,tar);
+		System.out.println("SED "+sed);
+		return 1.0 - (double)sed/(double)Math.max(src.length(), tar.length());
 	}
 
 
-	static int sed(Integer[] s1, Integer[] s2) {
-		int n1 = s1.length;
-		int n2 = s2.length;
+	static int sed(String s1, String s2) {
+		int n1 = s1.length();
+		int n2 = s2.length();
 
 		if (n1 == 0)
 			return n2;
@@ -37,7 +36,7 @@ public class StrED {
 
 		for (int i = 1; i < n1 + 1; i++)
 			for (int j = 1; j < n2 + 1; j++) {
-				if (s1[i - 1] == s2[j - 1])
+				if (s1.charAt(i - 1) == s2.charAt(j-1))
 					dis[i][j] = dis[i - 1][j - 1];
 				else
 					dis[i][j] = Math.min(dis[i - 1][j] + 1,
@@ -48,13 +47,10 @@ public class StrED {
 	}
 	
 	public static String srcpath = "src/main/resources/A.java";
-	public static String tarpath = "src/main/resources/B.java";
+	public static String tarpath = "src/main/resources/B2.java";
 	
 	public static void main(String[] args) {
-		Tree a = new Tree(Utils.createAST(srcpath));
-		Tree b = new Tree(Utils.createAST(tarpath));
-		Integer[] sa = a.preorder();
-		Integer[] sb = b.preorder();
-		System.out.println(sed(sa,sb));
+		System.out.println("DBySED "+degreeBySED(srcpath,tarpath));
+		System.out.println("DByTED "+Zhsh.degreeByTED(srcpath,tarpath));
 	}
 }

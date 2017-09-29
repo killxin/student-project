@@ -12,6 +12,7 @@ public class Zhsh {
 		Tree b = new Tree(Utils.createAST(tarpath));
 		int numB = b.nodeNums();
 		int ted = zhangShasha(a,b);
+		System.out.println("TED "+ted);
 		return 1.0 - (double)ted / (double)(numA + numB);
 	}
 
@@ -27,7 +28,7 @@ public class Zhsh {
 		// space complexity of the algorithm
 		TD = new int[l1.size() + 1][l2.size() + 1];
 
-		System.out.println(l1.size()+" "+l2.size());
+//		System.out.println(l1.size()+" "+l2.size());
 		
 		// solve subproblems
 		for (int i1 = 1; i1 < keyroots1.size() + 1; i1++) {
