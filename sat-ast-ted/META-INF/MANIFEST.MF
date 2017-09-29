@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ASTEditDistance
+Bundle-SymbolicName: sat-ast-ted
+Bundle-Version: 1.0.0
+Bundle-Vendor: rhjiang
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jdt,
+ org.eclipse.jdt.core,
+ org.eclipse.ui,
+ org.eclipse.ui.workbench,
+ org.eclipse.text,
+ org.eclipse.core.filebuffers,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
