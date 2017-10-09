@@ -17,7 +17,6 @@ public class Tree {
 	ArrayList<Integer> keyroots = new ArrayList<>();
 	
 	// list of the labels of the nodes used for node comparison
-//	ArrayList<ASTNode> labels = new ArrayList<ASTNode>();
 	ArrayList<Integer> labels = new ArrayList<>();
 
 	public Tree(CompilationUnit unit) {
@@ -28,14 +27,22 @@ public class Tree {
 		traverse();
 	}
 
-	public int nodeNums() {
+	boolean print = false;
+	
+	public int nodeNums(boolean print) {
+		this.print = print;
+		if(print){
+			System.out.println("========ASTPrinter========");
+		}
 		return nodeNums(root, 0, 0);
 	}
 
 	public int nodeNums(Node node, int space, int num) {
-//		for (int i = 0; i < space; i++)
-//			System.out.print(" ");
-//		System.out.println(node.label.getClass().getName());
+		if(print){
+			for (int i = 0; i < space; i++)
+				System.out.print(" ");
+			System.out.println(node);
+		}
 		num ++;
 		for (int i = 0; i < node.children.size(); i++) {
 			num = nodeNums(node.children.get(i), space + 2, num);
