@@ -17,10 +17,10 @@ public class Rules {
 		rules.add(new String[] { "(\\w*)ing", Dict.specialToken + "e" });
 		rules.add(new String[] { "(\\w*)ying", Dict.specialToken + "ie" });
 		rules.add(new String[] { "(\\w*(\\w))\\2ing", Dict.specialToken });
-		rules.add(new String[] { "(\\w*)ed$", Dict.specialToken });
-		rules.add(new String[] { "(\\w*)ed$", Dict.specialToken + "e" });
-		rules.add(new String[] { "(\\w*)ied$", Dict.specialToken + "y" });
-		rules.add(new String[] { "(\\w*(\\w))\\2ed$", Dict.specialToken });
+		rules.add(new String[] { "(\\w*)ed", Dict.specialToken });
+		rules.add(new String[] { "(\\w*)ed", Dict.specialToken + "e" });
+		rules.add(new String[] { "(\\w*)ied", Dict.specialToken + "y" });
+		rules.add(new String[] { "(\\w*(\\w))\\2ed", Dict.specialToken });
 		rules.add(new String[] { "went", "go" });
 		rules.add(new String[] { "gone", "go" });
 		rules.add(new String[] { "sat", "sit" });

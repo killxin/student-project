@@ -9,8 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Utils {
-	static String replace = "[¡°¡±-¡¶¡·¡¾¡¿£¨£©¡¢¡®¡¯]+";
-	static String split = "[£¿£¬¡££º£»£¡]+";
+	static String replace = "[â€œâ€-ã€Šã€‹ã€ã€‘ï¼ˆï¼‰ã€â€˜â€™â€”â€”]+";
+	static String split = "[ï¼Ÿï¼Œã€‚ï¼šï¼›ï¼â€¦â€¦]+";
 
 	static String[] split(String text) {
 		return text.replaceAll(replace, "").split(split);

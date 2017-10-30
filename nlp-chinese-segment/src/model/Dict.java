@@ -122,6 +122,8 @@ public class Dict {
 		}
 		if (sign) {
 			i = 0;
+			System.out.println("{");
+			System.out.print("  FMM: ");
 			for (Integer[] scope : records) {
 				for (; i < scope[0]; i++) {
 					System.out.print(fr[i] + " ");
@@ -134,7 +136,7 @@ public class Dict {
 				System.out.print(fr[i] + " ");
 			}
 			System.out.println("");
-
+			System.out.print("  RMM: ");
 			i = 0;
 			for (Integer[] scope : records) {
 				for (; i < scope[2]; i++) {
@@ -146,6 +148,12 @@ public class Dict {
 			}
 			for (; i < rr.length; i++) {
 				System.out.print(rr[i] + " ");
+			}
+			System.out.println("");
+			System.out.println("}");
+		} else {
+			for(String ws : fr){
+				System.out.print(ws + " ");
 			}
 			System.out.println("");
 		}

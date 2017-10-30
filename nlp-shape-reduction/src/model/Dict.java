@@ -19,7 +19,7 @@ public class Dict {
 				new FileInputStream(path), "GBK"));
 		String line = br.readLine();
 		while (line != null) {
-			String[] strs = line.split(specialToken + "+");
+			String[] strs = line.split(specialToken);
 			if (strs.length % 2 == 1) {
 				map.put(strs[0], new Word(strs));
 			}
@@ -37,7 +37,6 @@ public class Dict {
 					return map.get(newStr);
 				}
 			}
-			System.out.println(str + " is unregistered word!");
 		}
 		return word;
 	}
